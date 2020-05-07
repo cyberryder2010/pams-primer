@@ -150,7 +150,7 @@ Declarative views make your code more predictable and easier to debug.', 'reactj
 INSERT INTO "note"
     ("title", "date", "text")
 VALUES
-    ('Daily Standup', '5/5/2020', 'What did I do yesterday? What will I do today? WHat blocks do I have?'),
+    ('Daily Standup', '5/5/2020', 'What did I do yesterday? What will I do today? What blocks do I have?'),
     ('How To Presentations', '5/6/2020', 'Introduce your team members initially with first and last name. When you pass off the presentation announce who you are passing to, remember to thank the person who passes off to you. Use more pictures and less text, bullet point text is good. Be careful about humor or trying to land a joke, this is difficult and iffy. A funny picture may work better'),
     ('Question&Answer', '5/5/2020', 'How can you make multiple queries using one API call? Reasearch Nested Promises or Nested Pool.');
 
@@ -182,12 +182,18 @@ VALUES
     ('https://vimeo.com/401456078', 'pr1me', 'Myron Schippers', '4/20/2020'),
     ('https://vimeo.com/413167839', 'pr1me', 'Scott Bromander', '4/10/2020');
 
- --video titles and descriptions for reference table   
---3'Todo List Exercise (live solve)', 'To Do List Assignment Live Solve', 'VIMEO', 
---2'Recap End of Week Server (GET & POST), AJAX, & npm start', 'discussion of the items listed particularly npm dependencies', 'VIMEO',
---1'Agile', 'a look at the Project Management structure for Software Development called Agile', 'VIMEO', 
+--video title and description for reference table
+INSERT INTO "reference"
+    ("title", "description")
+VALUES
+    ('Agile', 'a look at the Project Management structure for Software Development called Agile'),
+    ('Recap End of Week Server (GET & POST), AJAX, & npm start', 'discussion of the items listed particularly npm dependencies'),
+    ('Todo List Exercise (live solve)', 'To Do List Assignment Live Solve');
 
 --repo title and descritions for reference table
---1. 'Full Stack REST with Cats', 'full stack restful API', 
---'REACT Component Intro', 'Intro for REACT Components', 
---'Backend Secure Routes', 'Security for the Server information', 
+INSERT INTO "reference"
+    ("title", "description")
+VALUES
+    ('Full Stack REST with Cats', 'full stack restful API'),
+    ('REACT Component Intro', 'Intro for REACT Components'),
+    ('Backend Secure Routes', 'Security for the Server information');
