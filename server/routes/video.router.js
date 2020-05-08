@@ -17,5 +17,26 @@ router.get("/", (req, res) => {
       res.sendStatus(500);
     });
 });
+// Setup a POST route to add a new video to the database
+router.post("/", (req, res) => {
+  const newVideo = req.body;
+  const sqlText = `INSERT INTO video (link, password, author, date) VALUES 
+($1, $2, $3, $4)`;
+  pool
+    .query(sqlText, [
+      newVideo.link,
+      newVideo.password,
+      newVideo.author,
+      newVideo.date,
+    ])
+    .then((result) => {
+      console.log(`Added video to the database`, newVideo);
+      res.sendStatus(201);
+    })
+    .catch((error) => {
+      console.log(`Error making database query ${sqlText}`, error);
+      res.sendStatus(500);
+    });
+});
 
 module.exports = router;

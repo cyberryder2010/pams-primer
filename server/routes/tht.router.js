@@ -4,8 +4,8 @@ const pool = require("../modules/pool");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  // get all repo reference data
-  const queryText = `SELECT * FROM "reference" JOIN "repo" ON "reference"."repo_id" = "repo"."id" ORDER BY "reference"."title" ASC;`;
+  // get all tip_hint_trick reference data
+  const queryText = `SELECT * FROM "tip_hint_trick" ORDER BY "type" ASC;`;
 
   pool
     .query(queryText)
@@ -17,15 +17,15 @@ router.get("/", (req, res) => {
       res.sendStatus(500);
     });
 });
-//setup a route to post a new repo to the database
+//post route to add new tip hint or trick to reference data
 router.post("/", (req, res) => {
-  const newRepo = req.body;
-  const sqlText = `INSERT INTO repo (link, author, date) VALUES 
-($1, $2, $3)`;
+  const newTht = req.body;
+  const sqlText = `INSERT INTO "tip_hint_trick" (type, text) VALUES 
+        ($1, $2)`;
   pool
-    .query(sqlText, [newRepo.link, newRepo.author, newRepo.date])
+    .query(sqlText, [newTht.term, newTht.definition])
     .then((result) => {
-      console.log(`Added Repo to the database`, newRepo);
+      console.log(`Added Tht to the database`, newTht);
       res.sendStatus(201);
     })
     .catch((error) => {
@@ -33,5 +33,4 @@ router.post("/", (req, res) => {
       res.sendStatus(500);
     });
 });
-
 module.exports = router;

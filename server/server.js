@@ -11,6 +11,11 @@ const passport = require("./strategies/user.strategy");
 const userRouter = require("./routes/user.router");
 const videoRouter = require("./routes/video.router");
 const repoRouter = require("./routes/repo.router");
+const linkRouter = require("./routes/link.router");
+const imageRouter = require("./routes/image.router");
+const glossaryRouter = require("./routes/glossary.router");
+const noteRouter = require("./routes/note.router");
+const thtRouter = require("./routes/tht.router");
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -26,6 +31,12 @@ app.use(passport.session());
 app.use("/api/user", userRouter);
 app.use("/api/video", videoRouter);
 app.use("/api/repo", repoRouter);
+app.use("/api/link", linkRouter);
+app.use("/api/image", imageRouter);
+app.use("/api/glossary", glossaryRouter);
+app.use("/api/note", noteRouter);
+app.use("/api/tht", thtRouter);
+
 // Serve static files
 app.use(express.static("build"));
 

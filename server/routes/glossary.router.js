@@ -4,8 +4,8 @@ const pool = require("../modules/pool");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  // get all repo reference data
-  const queryText = `SELECT * FROM "reference" JOIN "repo" ON "reference"."repo_id" = "repo"."id" ORDER BY "reference"."title" ASC;`;
+  // get all glossary reference data
+  const queryText = `SELECT * FROM "glossary" ORDER BY "term" ASC;`;
 
   pool
     .query(queryText)
@@ -17,15 +17,15 @@ router.get("/", (req, res) => {
       res.sendStatus(500);
     });
 });
-//setup a route to post a new repo to the database
+//post route to add new glossary terms to reference data
 router.post("/", (req, res) => {
-  const newRepo = req.body;
-  const sqlText = `INSERT INTO repo (link, author, date) VALUES 
-($1, $2, $3)`;
+  const newGlossary = req.body;
+  const sqlText = `INSERT INTO "glossary" (term, definition) VALUES 
+      ($1, $2)`;
   pool
-    .query(sqlText, [newRepo.link, newRepo.author, newRepo.date])
+    .query(sqlText, [newGlossary.term, newGlossary.definition])
     .then((result) => {
-      console.log(`Added Repo to the database`, newRepo);
+      console.log(`Added Glossary to the database`, newGlossary);
       res.sendStatus(201);
     })
     .catch((error) => {

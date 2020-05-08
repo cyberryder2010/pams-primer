@@ -4,8 +4,8 @@ const pool = require("../modules/pool");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  // get all repo reference data
-  const queryText = `SELECT * FROM "reference" JOIN "repo" ON "reference"."repo_id" = "repo"."id" ORDER BY "reference"."title" ASC;`;
+  // get all link reference data
+  const queryText = `SELECT * FROM "link" ORDER BY "title" ASC;`;
 
   pool
     .query(queryText)
@@ -17,15 +17,21 @@ router.get("/", (req, res) => {
       res.sendStatus(500);
     });
 });
-//setup a route to post a new repo to the database
+
+//setup a route to post a new link to the database
 router.post("/", (req, res) => {
-  const newRepo = req.body;
-  const sqlText = `INSERT INTO repo (link, author, date) VALUES 
-($1, $2, $3)`;
+  const newLink = req.body;
+  const sqlText = `INSERT INTO link (title, description, link, date) VALUES 
+  ($1, $2, $3, $4)`;
   pool
-    .query(sqlText, [newRepo.link, newRepo.author, newRepo.date])
+    .query(sqlText, [
+      newLink.title,
+      newLink.description,
+      newLink.link,
+      newLink.date,
+    ])
     .then((result) => {
-      console.log(`Added Repo to the database`, newRepo);
+      console.log(`Added Link to the database`, newLink);
       res.sendStatus(201);
     })
     .catch((error) => {
