@@ -16,7 +16,7 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="container">
-        {/* <h2>{this.state.heading}</h2> */}
+        <h2>{this.state.heading}</h2>
         <div className="grid">
           <div className="grid-col grid-col_8">
             <p>
