@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   // get all tip_hint_trick reference data
-  const queryText = `SELECT * FROM "tip_hint_trick" ORDER BY "type" ASC;`;
+  const queryText = `SELECT * FROM "tip_hint_trick" LEFT JOIN "reference" ON "tip_hint_trick"."reference_id" = "reference"."id" ORDER BY "reference"."title" ASC;`;
 
   pool
     .query(queryText)

@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   // get all image reference data
-  const queryText = `SELECT * FROM "image" ORDER BY "title" ASC;`;
+  const queryText = `SELECT * FROM "image" LEFT JOIN "reference" ON "image"."reference_id" = "reference"."id" ORDER BY "reference"."title" ASC;`;
 
   pool
     .query(queryText)

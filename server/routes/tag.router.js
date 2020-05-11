@@ -3,10 +3,9 @@ const pool = require("../modules/pool");
 
 const router = express.Router();
 
+// get all tag  data
 router.get("/", (req, res) => {
-  // get all link reference data
-  const queryText = `SELECT * FROM "link" LEFT JOIN "reference" ON "link"."reference_id" = "reference"."id" ORDER BY "reference"."title" ASC;`;
-
+  const queryText = `SELECT * FROM "tag" ORDER BY "name" ASC;`;
   pool
     .query(queryText)
     .then((responseDb) => {
@@ -18,20 +17,15 @@ router.get("/", (req, res) => {
     });
 });
 
-//setup a route to post a new link to the database
+//setup a route to post a new Tag to the database
 router.post("/", (req, res) => {
-  const newLink = req.body;
-  const sqlText = `INSERT INTO link (title, description, link, date) VALUES 
-  ($1, $2, $3, $4)`;
+  const newTag = req.body;
+  const sqlText = `INSERT INTO tag (name, name_id) VALUES 
+  ($1, $2)`;
   pool
-    .query(sqlText, [
-      newLink.title,
-      newLink.description,
-      newLink.link,
-      newLink.date,
-    ])
+    .query(sqlText, [newTag.link, newTag.author, newTag.date])
     .then((result) => {
-      console.log(`Added Link to the database`, newLink);
+      console.log(`Added Tag to the database`, newTag);
       res.sendStatus(201);
     })
     .catch((error) => {
@@ -39,5 +33,4 @@ router.post("/", (req, res) => {
       res.sendStatus(500);
     });
 });
-
 module.exports = router;

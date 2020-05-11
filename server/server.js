@@ -16,6 +16,9 @@ const imageRouter = require("./routes/image.router");
 const glossaryRouter = require("./routes/glossary.router");
 const noteRouter = require("./routes/note.router");
 const thtRouter = require("./routes/tht.router");
+const referenceRouter = require("./routes/reference.router");
+const tagRouter = require("./routes/tag.router");
+
 // Body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,6 +39,8 @@ app.use("/api/image", imageRouter);
 app.use("/api/glossary", glossaryRouter);
 app.use("/api/note", noteRouter);
 app.use("/api/tht", thtRouter);
+app.use("/api/reference", referenceRouter);
+app.use("/api/tag", tagRouter);
 
 // Serve static files
 app.use(express.static("build"));
