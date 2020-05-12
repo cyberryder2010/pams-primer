@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 
-class ReferencePage extends Component {
+class NotesPage extends Component {
   render() {
     return (
       <div>
-        <p>Reference Page</p>
+        <p>Notes Page</p>
       </div>
     );
   }
 }
 
-export default connect(mapStoreToProps)(ReferencePage);
+export default connect(mapStoreToProps)(NotesPage);

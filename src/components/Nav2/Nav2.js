@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 // material-ui imports
 import { withStyles, createStyles } from "@material-ui/core/styles";
@@ -53,7 +54,7 @@ class Nav2 extends Component {
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
             <Typography variant="h6" noWrap>
-              Permanent drawer
+              Tech Primer
             </Typography>
           </Toolbar>
         </AppBar>
@@ -70,10 +71,32 @@ class Nav2 extends Component {
           <Divider />
           <List>
             {[
+              { text: "Home", url: "/home" },
+              { text: "Add/Edit", url: "/add_edit" },
+              { text: "Login", url: "/login" },
+              { text: "Registration", url: "/registration" },
+            ].map((text, index) => (
+              <Link to={text.url} key={text.text}>
+                <ListItem button>
+                  <ListItemIcon>
+                    {index % 2 === 0 ? (
+                      <LabelIcon />
+                    ) : (
+                      <LabelImportantRoundedIcon />
+                    )}
+                  </ListItemIcon>
+                  <ListItemText primary={text.text} />
+                </ListItem>
+              </Link>
+            ))}
+          </List>
+          <Divider />
+          <List>
+            {[
               { text: "Notes", url: "/note" },
-              { text: "Repo", url: "/reference" },
-              { text: "Video", url: "/reference" },
-              { text: "Image", url: "/reference" },
+              { text: "Repos", url: "/reference" },
+              { text: "Videos", url: "/reference" },
+              { text: "Images", url: "/reference" },
             ].map((text, index) => (
               <Link to={text.url} key={text.text}>
                 <ListItem button>

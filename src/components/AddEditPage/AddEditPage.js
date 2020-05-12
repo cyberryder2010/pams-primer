@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 
-class ReferencePage extends Component {
+class AddEditPage extends Component {
   render() {
     return (
       <div>
-        <p>Reference Page</p>
+        <p>Add Edit Page</p>
       </div>
     );
   }
 }
 
-export default connect(mapStoreToProps)(ReferencePage);
+export default connect(mapStoreToProps)(AddEditPage);

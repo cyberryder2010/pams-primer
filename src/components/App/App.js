@@ -11,18 +11,22 @@ import { connect } from "react-redux";
 import Nav from "../Nav/Nav";
 import Nav2 from "../Nav2/Nav2";
 import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
+// import Header from "../Header/Header";
 
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 import AboutPage from "../AboutPage/AboutPage";
 import UserPage from "../UserPage/UserPage";
 import InfoPage from "../InfoPage/InfoPage";
-import LandingPage from "../LandingPage/LandingPage";
+// import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
-// import ReferencePage from "../ReferencePage/ReferencePage";
-// import HomePage from "../HomePage/HomePage";
+//pages specific to primer application
+import HomePage from "../HomePage/HomePage";
+import ReferencePage from "../ReferencePage/ReferencePage";
+import AddEditPage from "../AddEditPage/AddEditPage";
+import GlossaryPage from "../GlossaryPage/GlossaryPage";
+import NotesPage from "../NotesPage/NotesPage";
 
 import "./App.css";
 
@@ -35,7 +39,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Header />
+          {/* <Header /> */}
           <Nav />
           <Nav2>
             <Switch>
@@ -44,7 +48,7 @@ class App extends Component {
               {/* Visiting localhost:3000/about will show the about page.
             This is a route anyone can see, no login necessary */}
               <Route exact path="/about" component={AboutPage} />
-              <Route exact path="/home" component={LandingPage} />
+
               {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/user will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
@@ -67,6 +71,12 @@ class App extends Component {
                 authRedirect="/admin"
                 component={RegisterPage}
               />
+              {/* page routes for specific app pages in use. */}
+              <Route exact path="/home" component={HomePage} />
+              <Route exact path="/glossary" component={GlossaryPage} />
+              <Route exact path="/add_edit" component={AddEditPage} />
+              <Route exact path="/reference" component={ReferencePage} />
+              <Route exact path="/note" component={NotesPage} />
 
               {/* If none of the other routes matched, we will show a 404. */}
               <Route render={() => <h1>404</h1>} />
