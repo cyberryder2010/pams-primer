@@ -94,9 +94,9 @@ class Nav2 extends Component {
           <List>
             {[
               { text: "Notes", url: "/note" },
-              { text: "Repos", url: "/reference" },
-              { text: "Videos", url: "/reference" },
-              { text: "Images", url: "/reference" },
+              { text: "Repos", url: "/repo" },
+              { text: "Videos", url: "/video" },
+              { text: "Images", url: "/image" },
             ].map((text, index) => (
               <Link to={text.url} key={text.text}>
                 <ListItem button>

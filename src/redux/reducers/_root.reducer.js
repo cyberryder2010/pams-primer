@@ -4,7 +4,8 @@ import loginMode from "./loginMode.reducer";
 import user from "./user.reducer";
 import glossary from "./glossary.reducer";
 import note from "./note.reducer";
-
+import video from "./video.reducer";
+import repo from "./repo.reducer";
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -17,6 +18,8 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   glossary, //glossary terms and definitions
   note, //notes
+  video, //contains all videos
+  repo, // contains all repos
 });
 
 export default rootReducer;

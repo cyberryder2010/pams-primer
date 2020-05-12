@@ -27,7 +27,8 @@ import ReferencePage from "../ReferencePage/ReferencePage";
 import AddEditPage from "../AddEditPage/AddEditPage";
 import GlossaryPage from "../GlossaryPage/GlossaryPage";
 import NotesPage from "../NotesPage/NotesPage";
-
+import VideoPage from "../VideoPage/VideoPage";
+import RepoPage from "../RepoPage/RepoPage";
 import "./App.css";
 
 class App extends Component {
@@ -76,6 +77,8 @@ class App extends Component {
               <Route exact path="/glossary" component={GlossaryPage} />
               <Route exact path="/add_edit" component={AddEditPage} />
               <Route exact path="/reference" component={ReferencePage} />
+              <Route exact path="/video" component={VideoPage} />
+              <Route exact path="/repo" component={RepoPage} />
               <Route exact path="/note" component={NotesPage} />
 
               {/* If none of the other routes matched, we will show a 404. */}
