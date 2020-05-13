@@ -21,7 +21,7 @@ import InfoPage from "../InfoPage/InfoPage";
 // import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
-//pages specific to primer application
+//pages specific to tech primer application
 import HomePage from "../HomePage/HomePage";
 import ReferencePage from "../ReferencePage/ReferencePage";
 import AddEditPage from "../AddEditPage/AddEditPage";
@@ -73,9 +73,9 @@ class App extends Component {
                 component={RegisterPage}
               />
               {/* page routes for specific app pages in use. */}
-              <Route exact path="/home" component={HomePage} />
+              <Route exact path="/home" component={ReferencePage} />
               <Route exact path="/glossary" component={GlossaryPage} />
-              <Route exact path="/add_edit" component={AddEditPage} />
+              <Route exact path="/reference/edit" component={AddEditPage} />
               <Route exact path="/reference" component={ReferencePage} />
               <Route exact path="/video" component={VideoPage} />
               <Route exact path="/repo" component={RepoPage} />

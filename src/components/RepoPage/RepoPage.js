@@ -43,7 +43,7 @@ class RepoPage extends Component {
             </TableRow>
           </TableHead>
           <TableBody>
-            {this.props.store.glossary.map((item, index) => (
+            {this.props.store.repo.map((item, index) => (
               <TableRow key={index}>
                 <TableCell component="th" scope="item">
                   {item.name}

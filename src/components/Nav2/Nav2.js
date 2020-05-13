@@ -72,9 +72,9 @@ class Nav2 extends Component {
           <List>
             {[
               { text: "Home", url: "/home" },
-              { text: "Add/Edit", url: "/add_edit" },
+              { text: "Add/Edit", url: "/reference/edit" },
               { text: "Login", url: "/login" },
-              { text: "Registration", url: "/registration" },
+              { text: "Handy Links", url: "/link" },
             ].map((text, index) => (
               <Link to={text.url} key={text.text}>
                 <ListItem button>
@@ -93,9 +93,8 @@ class Nav2 extends Component {
           <Divider />
           <List>
             {[
-              { text: "Notes", url: "/note" },
-              { text: "Repos", url: "/repo" },
               { text: "Videos", url: "/video" },
+              { text: "Repos", url: "/repo" },
               { text: "Images", url: "/image" },
             ].map((text, index) => (
               <Link to={text.url} key={text.text}>
@@ -115,10 +114,9 @@ class Nav2 extends Component {
           <Divider />
           <List>
             {[
-              { text: "Terms", url: "/glossary" },
-              { text: "Tips", url: "/reference" },
-              { text: "Hints", url: "/reference" },
-              { text: "Tricks", url: "/reference" },
+              { text: "Notes", url: "/note" },
+              { text: "Tech Speak", url: "/glossary" },
+              { text: "Tips, Hints, Tricks", url: "/reference" },
             ].map((text, index) => (
               <Link to={text.url} key={text.text}>
                 <ListItem button>

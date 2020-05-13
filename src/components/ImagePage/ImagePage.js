@@ -18,11 +18,11 @@ const useStyles = (theme) =>
     },
   });
 
-class VideoPage extends Component {
+class ImagePage extends Component {
   componentDidMount() {
     // load up all information from the server
     this.props.dispatch({
-      type: "GET_ALL_VIDEOS",
+      type: "GET_ALL_PICS",
     });
   }
 
@@ -34,27 +34,21 @@ class VideoPage extends Component {
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Videos</TableCell>
+              <TableCell>Notes</TableCell>
               <TableCell align="right">Title</TableCell>
-              <TableCell align="right">Description</TableCell>
               <TableCell align="right">Date</TableCell>
-              <TableCell align="right">Author</TableCell>
-              <TableCell align="right">Link</TableCell>
-              <TableCell align="right">Password</TableCell>
+              <TableCell align="right">Note</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {this.props.store.video.map((item, index) => (
+            {this.props.store.note.map((item, index) => (
               <TableRow key={index}>
                 <TableCell component="th" scope="item">
                   {item.name}
                 </TableCell>
                 <TableCell align="right">{item.title}</TableCell>
-                <TableCell align="right">{item.description}</TableCell>
                 <TableCell align="right">{item.date}</TableCell>
-                <TableCell align="right">{item.author}</TableCell>
-                <TableCell align="right">{item.link}</TableCell>
-                <TableCell align="right">{item.password}</TableCell>
+                <TableCell align="right">{item.text}</TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -64,4 +58,4 @@ class VideoPage extends Component {
   }
 }
 
-export default withStyles(useStyles)(connect(mapStoreToProps)(VideoPage));
+export default withStyles(useStyles)(connect(mapStoreToProps)(ImagePage));

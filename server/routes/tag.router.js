@@ -33,4 +33,20 @@ router.post("/", (req, res) => {
       res.sendStatus(500);
     });
 });
+
+router.delete("/:id", (req, res) => {
+  const tagId = req.params.id;
+  const queryString = `DELETE FROM "tag" WHERE "id" = $1;`;
+
+  pool
+    .query(queryString, [tagId])
+    .then((responseDb) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.warn(err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
