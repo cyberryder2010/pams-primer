@@ -3,12 +3,12 @@ import loginSaga from "./login.saga";
 import registrationSaga from "./registration.saga";
 import userSaga from "./user.saga";
 
-import getReference from "./getReference.saga";
-import postTag from "./postTag.saga";
-import getTag from "./getTag.saga";
-import getReferenceTag from "./getReferenceTag.saga";
-import postReferenceTag from "./postReferenceTag.saga";
-import addReferenceSaga from "./addReference.saga";
+import getReferenceSaga from "./getReference.saga";
+import postTagSaga from "./postTag.saga";
+import getTagSaga from "./getTag.saga";
+import getReferenceTagSaga from "./getReferenceTag.saga";
+import postReferenceTagSaga from "./postReferenceTag.saga";
+import putReferenceDetailsSaga from "./putReferenceDetails.saga";
 import glossarySaga from "./glossary.saga";
 import noteSaga from "./note.saga";
 import videoSaga from "./video.saga";
@@ -26,14 +26,14 @@ export default function* rootSaga() {
     loginSaga(),
     registrationSaga(),
     userSaga(),
-    postTag(),
-    getTag(),
-    addReferenceSaga(),
-    getReference(),
-    getTag(),
-    postTag(),
-    getReferenceTag(),
-    postReferenceTag(),
+    postTagSaga(),
+    getTagSaga(),
+    putReferenceDetailsSaga(),
+    getReferenceSaga(),
+    getTagSaga(),
+    postTagSaga(),
+    getReferenceTagSaga(),
+    postReferenceTagSaga(),
     glossarySaga(),
     noteSaga(),
     videoSaga(),

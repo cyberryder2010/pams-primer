@@ -1,7 +1,7 @@
 import axios from "axios";
-import { put } from "redux-saga/effects";
+import { put, takeLatest } from "redux-saga/effects";
 
-function* addReferenceDetails(action) {
+function* putReferenceDetails(action) {
   try {
     const referenceId = action.payload.id;
     yield axios.put(`/api/reference/edit/${referenceId}`, action.payload);
@@ -18,4 +18,9 @@ function* addReferenceDetails(action) {
   }
 }
 
-export default addReferenceDetails;
+function* putReferenceDetailsSaga() {
+  yield takeLatest("GET_REFERENCE_TAG", putReferenceDetails);
+  yield takeLatest("GET_REFERENCE", putReferenceDetails);
+}
+
+export default putReferenceDetailsSaga;

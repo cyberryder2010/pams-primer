@@ -5,12 +5,15 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   // get all reference data
-  const queryText = `SELECT "reference".id, "reference".title, "reference".description, array_agg("tag".name) as "tag"
-    FROM "reference"
+  const queryText = `SELECT * FROM "reference"
     LEFT JOIN "tag_reference" ON "reference".id = "tag_reference".reference_id
     LEFT JOIN "tag" ON "tag_reference".tag_id = "tag".id
-    GROUP BY "reference".id
-    ORDER BY "title" ASC;`;
+    LEFT JOIN "video" ON "reference"."video_id" = "video"."id" 
+    LEFT JOIN "repo" ON "reference"."repo_id" = "repo"."id"
+    LEFT JOIN "link" ON "reference"."id" = "link"."reference_id"
+    LEFT JOIN "note" ON "reference"."id" = "note"."reference_id"  
+    LEFT JOIN "tip_hint_trick" ON "reference"."id" = "tip_hint_trick"."reference_id" 
+    ORDER BY "reference".title ASC`;
 
   pool
     .query(queryText)
@@ -132,3 +135,5 @@ router.post("/tag", (req, res) => {
 });
 
 module.exports = router;
+
+// "reference".id, "reference".title, "reference".description, array_agg("tag".name) as "tag"

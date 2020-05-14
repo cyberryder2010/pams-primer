@@ -26,6 +26,10 @@ class VideoPage extends Component {
     });
   }
 
+  clickVideoDetails = (event, id) => {
+    this.props.history.push(`/details/${id}`);
+  };
+
   render() {
     const { classes } = this.props;
 
@@ -38,23 +42,26 @@ class VideoPage extends Component {
               <TableCell align="right">Title</TableCell>
               <TableCell align="right">Description</TableCell>
               <TableCell align="right">Date</TableCell>
-              <TableCell align="right">Author</TableCell>
+              {/* <TableCell align="right">Author</TableCell>
               <TableCell align="right">Link</TableCell>
-              <TableCell align="right">Password</TableCell>
+              <TableCell align="right">Password</TableCell> */}
             </TableRow>
           </TableHead>
           <TableBody>
             {this.props.store.video.map((item, index) => (
-              <TableRow key={index}>
+              <TableRow
+                onClick={(event) => this.clickVideoDetails(event, item.id)}
+                key={index}
+              >
                 <TableCell component="th" scope="item">
                   {item.name}
                 </TableCell>
                 <TableCell align="right">{item.title}</TableCell>
                 <TableCell align="right">{item.description}</TableCell>
                 <TableCell align="right">{item.date}</TableCell>
-                <TableCell align="right">{item.author}</TableCell>
+                {/* <TableCell align="right">{item.author}</TableCell>
                 <TableCell align="right">{item.link}</TableCell>
-                <TableCell align="right">{item.password}</TableCell>
+                <TableCell align="right">{item.password}</TableCell> */}
               </TableRow>
             ))}
           </TableBody>

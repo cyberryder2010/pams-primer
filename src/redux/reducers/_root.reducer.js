@@ -4,6 +4,7 @@ import loginMode from "./loginMode.reducer";
 import user from "./user.reducer";
 import reference from "./reference.reducer";
 import tag from "./tag.reducer";
+import referenceTag from "./referenceTag.reducer";
 import details from "./details.reducer";
 import glossary from "./glossary.reducer";
 import note from "./note.reducer";
@@ -20,6 +21,8 @@ const rootReducer = combineReducers({
   loginMode, // will have a value of 'login' or 'registration' to control which screen is shown
   user, // will have an id and username if someone is logged in
   reference, //all references in reducer
+  tag, //all tags
+  referenceTag, // combined reference and tags
   details, //add a new reference to the database
   glossary, //glossary terms and definitions
   note, //notes

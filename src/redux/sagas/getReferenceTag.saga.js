@@ -1,5 +1,5 @@
 import axios from "axios";
-import { put } from "redux-saga/effects";
+import { put, takeLatest } from "redux-saga/effects";
 
 function* getReferenceTag(action) {
   try {
@@ -14,4 +14,7 @@ function* getReferenceTag(action) {
   }
 }
 
-export default getReferenceTag;
+function* getReferenceTagSaga() {
+  yield takeLatest("GET_REFERENCE_TAG", getReferenceTag);
+}
+export default getReferenceTagSaga;

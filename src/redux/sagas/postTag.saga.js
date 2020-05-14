@@ -1,5 +1,5 @@
 import axios from "axios";
-import { put } from "redux-saga/effects";
+import { put, takeLatest } from "redux-saga/effects";
 
 function* postTag(action) {
   try {
@@ -11,5 +11,7 @@ function* postTag(action) {
     console.warn(err);
   }
 }
-
-export default postTag;
+function* tagSaga() {
+  yield takeLatest("GET_TAG", postTag);
+}
+export default tagSaga;

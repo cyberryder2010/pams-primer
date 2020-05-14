@@ -14,7 +14,7 @@ import {
 import ReferenceTagEditor from "../ReferenceTagEditor/ReferenceTagEditor";
 import Header from "../Header/Header";
 
-class AddEditPage extends Component {
+class EditPage extends Component {
   state = {
     title: "",
     description: "",
@@ -126,4 +126,4 @@ class AddEditPage extends Component {
 
 const mapStoreToProps = (store) => ({ store });
 
-export default connect(mapStoreToProps)(AddEditPage);
+export default connect(mapStoreToProps)(EditPage);

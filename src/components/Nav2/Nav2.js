@@ -72,7 +72,7 @@ class Nav2 extends Component {
           <List>
             {[
               { text: "Home", url: "/home" },
-              { text: "Add/Edit", url: "/reference/edit" },
+              { text: "Add", url: "/add" },
               { text: "Login", url: "/login" },
               { text: "Handy Links", url: "/link" },
             ].map((text, index) => (

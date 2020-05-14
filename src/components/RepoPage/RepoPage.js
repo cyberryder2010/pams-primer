@@ -35,11 +35,11 @@ class RepoPage extends Component {
           <TableHead>
             <TableRow>
               <TableCell>Repos</TableCell>
-              <TableCell align="right">Title</TableCell>
-              <TableCell align="right">Description</TableCell>
-              <TableCell align="right">Date</TableCell>
-              <TableCell align="right">Author</TableCell>
-              <TableCell align="right">Repo</TableCell>
+              <TableCell align="left">Date</TableCell>
+              <TableCell align="left">Title</TableCell>
+              <TableCell align="left">Description</TableCell>
+              {/* <TableCell align="left">Author</TableCell>
+              <TableCell align="left">Repo</TableCell> */}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -48,11 +48,11 @@ class RepoPage extends Component {
                 <TableCell component="th" scope="item">
                   {item.name}
                 </TableCell>
-                <TableCell align="right">{item.title}</TableCell>
-                <TableCell align="right">{item.description}</TableCell>
-                <TableCell align="right">{item.date}</TableCell>
-                <TableCell align="right">{item.author}</TableCell>
-                <TableCell align="right">{item.link}</TableCell>
+                <TableCell align="left">{item.date}</TableCell>
+                <TableCell align="left">{item.title}</TableCell>
+                <TableCell align="left">{item.description}</TableCell>
+                {/* <TableCell align="left">{item.author}</TableCell>
+                <TableCell align="left">{item.link}</TableCell> */}
               </TableRow>
             ))}
           </TableBody>
