@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 // app components
 import ReferenceList from "../ReferenceList/ReferenceList";
-// import ReferenceSearchField from "../ReferenceSearchField/ReferenceSearchField";
+import ReferenceSearchField from "../ReferenceSearchField/ReferenceSearchField";
 
 class HomePage extends Component {
   render() {
@@ -11,7 +11,7 @@ class HomePage extends Component {
       <div>
         <ReferenceList />
 
-        {/* <ReferenceSearchField /> */}
+        <ReferenceSearchField />
       </div>
     );
   }

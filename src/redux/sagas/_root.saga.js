@@ -4,7 +4,7 @@ import registrationSaga from "./registration.saga";
 import userSaga from "./user.saga";
 
 import getAllReferenceSaga from "./getAllReference.saga";
-import getReferenceSaga from "./getReference.saga";
+import getReferenceDetailsSaga from "./getReferenceDetails.saga";
 import postTagSaga from "./postTag.saga";
 import getTagSaga from "./getTag.saga";
 import getReferenceTagSaga from "./getReferenceTag.saga";
@@ -15,6 +15,7 @@ import noteSaga from "./note.saga";
 import videoSaga from "./video.saga";
 import repoSaga from "./repo.saga";
 import tipHintTrick from "./tht.saga";
+import imageSaga from "./image.saga";
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -31,7 +32,7 @@ export default function* rootSaga() {
     postTagSaga(),
     getTagSaga(),
     putReferenceDetailsSaga(),
-    getReferenceSaga(),
+    getReferenceDetailsSaga(),
     getTagSaga(),
     postTagSaga(),
     getReferenceTagSaga(),
@@ -42,5 +43,6 @@ export default function* rootSaga() {
     repoSaga(),
     tipHintTrick(),
     getAllReferenceSaga(),
+    imageSaga(),
   ]);
 }

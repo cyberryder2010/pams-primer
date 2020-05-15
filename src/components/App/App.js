@@ -23,11 +23,14 @@ import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 //pages specific to tech primer application
 import HomePage from "../HomePage/HomePage";
+import ReferenceList from "../ReferenceList/ReferenceList";
 // import ReferencePage from "../ReferencePage/ReferencePage";
 import DetailsPage from "../DetailsPage/DetailsPage";
 import EditPage from "../EditPage/EditPage";
+import AddPage from "../AddPage/AddPage";
 import GlossaryPage from "../GlossaryPage/GlossaryPage";
 import NotesPage from "../NotesPage/NotesPage";
+import ImagePage from "../ImagePage/ImagePage";
 import VideoPage from "../VideoPage/VideoPage";
 import RepoPage from "../RepoPage/RepoPage";
 import TipHintTrickPage from "../TipHintTrickPage/TipHintTrickPage";
@@ -76,15 +79,18 @@ class App extends Component {
               />
               {/* page routes for specific app pages in use. */}
               <Route exact path="/home" component={HomePage} />
+              <Route exact path="/reference" component={ReferenceList} />
               <Route exact path="/reference/edit/:id" component={EditPage} />
               <Route
                 exact
                 path="/reference/details/:id"
                 component={DetailsPage}
               />
+              <Route exact path="/add" component={AddPage} />
               <Route exact path="/video" component={VideoPage} />
               <Route exact path="/repo" component={RepoPage} />
               <Route exact path="/note" component={NotesPage} />
+              <Route exact path="/image" component={ImagePage} />
               <Route exact path="/glossary" component={GlossaryPage} />
               <Route
                 exact

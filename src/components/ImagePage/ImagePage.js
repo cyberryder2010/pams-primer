@@ -2,25 +2,21 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import mapStoreToProps from "../../redux/mapStoreToProps";
 
+// custom material-ui styling dependencies
 import { withStyles, createStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
+// material component imports
+import { Container, Grid } from "@material-ui/core";
 
-const useStyles = (theme) =>
+const customStyles = (theme) =>
   createStyles({
-    table: {
-      minWidth: 650,
+    image: {
+      width: "100%",
     },
   });
 
 class ImagePage extends Component {
   componentDidMount() {
-    // load up all information from the server
+    // load up all images from the server
     this.props.dispatch({
       type: "GET_ALL_PICS",
     });
@@ -30,32 +26,21 @@ class ImagePage extends Component {
     const { classes } = this.props;
 
     return (
-      <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell>Notes</TableCell>
-              <TableCell align="right">Title</TableCell>
-              <TableCell align="right">Date</TableCell>
-              <TableCell align="right">Note</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {this.props.store.note.map((item, index) => (
-              <TableRow key={index}>
-                <TableCell component="th" scope="item">
-                  {item.name}
-                </TableCell>
-                <TableCell align="right">{item.title}</TableCell>
-                <TableCell align="right">{item.date}</TableCell>
-                <TableCell align="right">{item.text}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <div className="algnRight">
+        <Container maxWidth={false}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={4} md={3}>
+              <img
+                className={classes.image}
+                src={this.props.store.source}
+                alt={`${this.props.store.alt_description}`}
+              />
+            </Grid>
+          </Grid>
+        </Container>
+      </div>
     );
   }
 }
 
-export default withStyles(useStyles)(connect(mapStoreToProps)(ImagePage));
+export default withStyles(customStyles)(connect(mapStoreToProps)(ImagePage));

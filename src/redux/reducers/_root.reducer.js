@@ -11,6 +11,7 @@ import note from "./note.reducer";
 import video from "./video.reducer";
 import repo from "./repo.reducer";
 import tipHintTrick from "./tht.reducer";
+import image from "./image.reducer";
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
   video, //contains all videos
   repo, // contains all repos
   tipHintTrick, //contains all of the tht stuff
+  image, //all pics
 });
 
 export default rootReducer;

@@ -3,6 +3,28 @@ const pool = require("../modules/pool");
 
 const router = express.Router();
 
+router.get("/", (req, res) => {
+  // get all reference data
+  const queryText = `SELECT "reference".id, "reference".title, "reference".description, "video".link as "video_link", "video".date as "video_date", "video".author as "video_author", "video".password, "repo".link as "repo_link", "repo".date as "repo_date", "repo".author as "repo_author", "link".link as "link_link", "note".title as "note_title", "note".text as "note_text", "tip_hint_trick".type, "tip_hint_trick".text as "tip_hint_trick_text" FROM "reference"
+    LEFT JOIN "tag_reference" ON "reference".id = "tag_reference".reference_id
+    LEFT JOIN "tag" ON "tag_reference".tag_id = "tag".id
+    LEFT JOIN "video" ON "reference"."video_id" = "video"."id" 
+    LEFT JOIN "repo" ON "reference"."repo_id" = "repo"."id"
+    LEFT JOIN "link" ON "reference"."link_id" = "link"."id"
+    LEFT JOIN "note" ON "reference"."id" = "note"."reference_id"  
+    LEFT JOIN "tip_hint_trick" ON "reference"."id" = "tip_hint_trick"."reference_id" 
+    ORDER BY "reference".title ASC;`;
+  pool
+    .query(queryText)
+    .then((responseDb) => {
+      res.send(responseDb.rows);
+    })
+    .catch((err) => {
+      console.warn(err);
+      res.sendStatus(500);
+    });
+});
+
 router.get("/details/:id", (req, res) => {
   // get all reference data
   const queryText = `SELECT "reference".title, "reference".description, "video".link as "video_link", "video".date as "video_date", "video".author as "video_author", "video".password, "repo".link as "repo_link", "repo".date as "repo_date", "repo".author as "repo_author", "link".link as "link_link", "note".title as "note_title", "note".text as "note_text", "tip_hint_trick".type, "tip_hint_trick".text as "tip_hint_trick_text" FROM "reference"

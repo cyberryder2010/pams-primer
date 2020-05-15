@@ -30,7 +30,7 @@ class ReferenceListItem extends Component {
   }
 
   clickReferenceDetails = (event, id) => {
-    this.props.history.push(`/details/${id}`);
+    this.props.history.push(`/reference/details/${id}`);
   };
 
   render() {
@@ -44,6 +44,8 @@ class ReferenceListItem extends Component {
           <CardContent>
             <Typography component="h3" variant="h6">
               {item.title}
+            </Typography>
+            <Typography component="p" variant="body1">
               {item.description}
             </Typography>
           </CardContent>

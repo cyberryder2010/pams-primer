@@ -32,24 +32,10 @@ class ReferenceList extends Component {
   // }
 
   render() {
-    let limitedResults = this.props.store.reference.filter((item, index) => {
-      const lowerTitle = item.title.toLowerCase();
-
-      if (this.props.store.search) {
-        return lowerTitle.indexOf(this.props.store.search.toLowerCase()) !== -1;
-      }
-
-      return true;
-    });
-
-    limitedResults = limitedResults.filter((item, index) => {
-      return index < 10;
-    });
-
     return (
       <Container maxWidth={false}>
         <Grid container spacing={2}>
-          {limitedResults.map((item, index) => (
+          {this.props.store.reference.map((item, index) => (
             <Grid item xs={12} sm={4} md={3} lg={2}>
               <ReferenceListItem key={index} item={item} />
             </Grid>

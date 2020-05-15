@@ -1,7 +1,7 @@
 import axios from "axios";
 import { put, takeLatest } from "redux-saga/effects";
 
-function* getReference(action) {
+function* getReferenceDetails(action) {
   try {
     const referenceId = action.payload;
     const response = yield axios.get(`/api/reference/details/${referenceId}`);
@@ -13,7 +13,7 @@ function* getReference(action) {
     console.warn(err);
   }
 }
-function* getReferenceSaga() {
-  yield takeLatest("GET_REFERENCE", getReference);
+function* getReferenceDetailsSaga() {
+  yield takeLatest("GET_REFERENCE_DETAILS", getReferenceDetails);
 }
-export default getReferenceSaga;
+export default getReferenceDetailsSaga;
