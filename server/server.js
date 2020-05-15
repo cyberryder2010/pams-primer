@@ -38,7 +38,7 @@ app.use("/api/link", linkRouter);
 app.use("/api/image", imageRouter);
 app.use("/api/glossary", glossaryRouter);
 app.use("/api/note", noteRouter);
-app.use("/api/tht", thtRouter);
+app.use("/api/tip_hint_trick", thtRouter);
 app.use("/api/reference", referenceRouter);
 app.use("/api/tag", tagRouter);
 

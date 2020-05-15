@@ -1,15 +1,26 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import mapStoreToProps from "../../redux/mapStoreToProps";
+
+// app components
+import ReferenceList from "../ReferenceList/ReferenceList";
+// import ReferenceSearchField from "../ReferenceSearchField/ReferenceSearchField";
 
 class HomePage extends Component {
   render() {
     return (
       <div>
-        <p>This is My Home Page</p>
+        <ReferenceList />
+
+        {/* <ReferenceSearchField /> */}
       </div>
     );
   }
 }
+
+const mapStoreToProps = (store) => {
+  return {
+    store,
+  };
+};
 
 export default connect(mapStoreToProps)(HomePage);

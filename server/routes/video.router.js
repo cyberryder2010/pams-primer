@@ -4,7 +4,7 @@ const pool = require("../modules/pool");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-  // get all video reference data
+  // get all video Video data
   const queryText = `SELECT * FROM "reference" JOIN "video" ON "reference"."video_id" = "video"."id" ORDER BY "reference"."title" ASC;`;
 
   pool
@@ -35,6 +35,32 @@ router.post("/", (req, res) => {
     })
     .catch((error) => {
       console.log(`Error making database query ${sqlText}`, error);
+      res.sendStatus(500);
+    });
+});
+
+router.put("/edit/:id", (req, res) => {
+  // update a single video
+  const queryText = `UPDATE "video"
+    SET "link" = $1, "author" = $2, "date" = $3
+    WHERE "id" = $4;`;
+  const videoId = req.params.id;
+  const newVideoData = req.body;
+
+  pool
+    .query(queryText, [
+      // how is title coming to server
+      newVideoData.link,
+      // how to get the description
+      newVideoData.author,
+      newVideoData.date,
+      videoId,
+    ])
+    .then((responseDb) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.warn(err);
       res.sendStatus(500);
     });
 });

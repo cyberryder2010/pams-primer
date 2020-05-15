@@ -10,6 +10,8 @@ import glossary from "./glossary.reducer";
 import note from "./note.reducer";
 import video from "./video.reducer";
 import repo from "./repo.reducer";
+import tipHintTrick from "./tht.reducer";
+
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -23,11 +25,12 @@ const rootReducer = combineReducers({
   reference, //all references in reducer
   tag, //all tags
   referenceTag, // combined reference and tags
-  details, //add a new reference to the database
+  details, //combine all information for a reference item
   glossary, //glossary terms and definitions
   note, //notes
   video, //contains all videos
   repo, // contains all repos
+  tipHintTrick, //contains all of the tht stuff
 });
 
 export default rootReducer;

@@ -22,14 +22,15 @@ import InfoPage from "../InfoPage/InfoPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 //pages specific to tech primer application
-// import HomePage from "../HomePage/HomePage";
-import ReferencePage from "../ReferencePage/ReferencePage";
+import HomePage from "../HomePage/HomePage";
+// import ReferencePage from "../ReferencePage/ReferencePage";
 import DetailsPage from "../DetailsPage/DetailsPage";
 import EditPage from "../EditPage/EditPage";
 import GlossaryPage from "../GlossaryPage/GlossaryPage";
 import NotesPage from "../NotesPage/NotesPage";
 import VideoPage from "../VideoPage/VideoPage";
 import RepoPage from "../RepoPage/RepoPage";
+import TipHintTrickPage from "../TipHintTrickPage/TipHintTrickPage";
 import "./App.css";
 
 class App extends Component {
@@ -74,8 +75,7 @@ class App extends Component {
                 component={RegisterPage}
               />
               {/* page routes for specific app pages in use. */}
-              <Route exact path="/home" component={ReferencePage} />
-              <Route exact path="/glossary" component={GlossaryPage} />
+              <Route exact path="/home" component={HomePage} />
               <Route exact path="/reference/edit/:id" component={EditPage} />
               <Route
                 exact
@@ -85,7 +85,12 @@ class App extends Component {
               <Route exact path="/video" component={VideoPage} />
               <Route exact path="/repo" component={RepoPage} />
               <Route exact path="/note" component={NotesPage} />
-
+              <Route exact path="/glossary" component={GlossaryPage} />
+              <Route
+                exact
+                path="/tip_hint_trick"
+                component={TipHintTrickPage}
+              />
               {/* If none of the other routes matched, we will show a 404. */}
               <Route render={() => <h1>404</h1>} />
             </Switch>

@@ -27,7 +27,7 @@ class VideoPage extends Component {
   }
 
   clickVideoDetails = (event, id) => {
-    this.props.history.push(`/details/${id}`);
+    this.props.history.push(`reference/details/${id}`);
   };
 
   render() {
@@ -39,12 +39,12 @@ class VideoPage extends Component {
           <TableHead>
             <TableRow>
               <TableCell>Videos</TableCell>
-              <TableCell align="right">Title</TableCell>
-              <TableCell align="right">Description</TableCell>
-              <TableCell align="right">Date</TableCell>
-              {/* <TableCell align="right">Author</TableCell>
-              <TableCell align="right">Link</TableCell>
-              <TableCell align="right">Password</TableCell> */}
+              <TableCell align="left">Title</TableCell>
+              <TableCell align="left">Description</TableCell>
+              <TableCell align="left">Date</TableCell>
+              {/* <TableCell align="left">Author</TableCell>
+              <TableCell align="left">Link</TableCell>
+              <TableCell align="left">Password</TableCell> */}
             </TableRow>
           </TableHead>
           <TableBody>
@@ -56,12 +56,12 @@ class VideoPage extends Component {
                 <TableCell component="th" scope="item">
                   {item.name}
                 </TableCell>
-                <TableCell align="right">{item.title}</TableCell>
-                <TableCell align="right">{item.description}</TableCell>
-                <TableCell align="right">{item.date}</TableCell>
-                {/* <TableCell align="right">{item.author}</TableCell>
-                <TableCell align="right">{item.link}</TableCell>
-                <TableCell align="right">{item.password}</TableCell> */}
+                <TableCell align="left">{item.title}</TableCell>
+                <TableCell align="left">{item.description}</TableCell>
+                <TableCell align="left">{item.date}</TableCell>
+                {/* <TableCell align="left">{item.author}</TableCell>
+                <TableCell align="left">{item.link}</TableCell>
+                <TableCell align="left">{item.password}</TableCell> */}
               </TableRow>
             ))}
           </TableBody>

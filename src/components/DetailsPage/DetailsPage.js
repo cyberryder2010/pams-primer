@@ -6,8 +6,8 @@ import { withStyles, createStyles } from "@material-ui/core/styles";
 // material component imports
 import { Button, Container, Grid, Typography, Box } from "@material-ui/core";
 
-import Header from "../Header/Header";
-import ReferenceTagEditor from "../ReferenceTagEditor/ReferenceTagEditor";
+// import Header from "../Header/Header";
+// import ReferenceTagEditor from "../ReferenceTagEditor/ReferenceTagEditor";
 
 const customStyles = (theme) =>
   createStyles({
@@ -23,10 +23,6 @@ class DetailsPage extends Component {
       type: "GET_REFERENCE",
       payload: this.props.match.params.id,
     });
-    this.props.dispatch({
-      type: "GET_REFERENCE_TAG",
-      payload: this.props.match.params.id,
-    });
   }
 
   clickBackToList = (event) => {
@@ -34,22 +30,17 @@ class DetailsPage extends Component {
   };
 
   clickEditReference = (event) => {
-    this.props.history.push(`/edit/${this.props.match.params.id}`);
+    this.props.history.push(
+      `../../reference/edit/${this.props.match.params.id}`
+    );
   };
 
   render() {
     return (
       <div className="algnLeft">
-        <Header title="Details" backHandler={this.clickBackToList}>
-          <Button
-            onClick={this.clickEditReference}
-            variant="outlined"
-            color="inherit"
-            size="large"
-          >
-            Edit
-          </Button>
-        </Header>
+        {/* <Header title="Details" backHandler={this.clickBackToList}>
+          
+        </Header> */}
 
         <Container maxWidth={false}>
           <Grid container spacing={2}>
@@ -64,7 +55,51 @@ class DetailsPage extends Component {
                 </Typography>
               </Box>
 
-              <ReferenceTagEditor referenceId={this.props.match.params.id} />
+              <Box mb={3}>
+                <Typography component="p" variant="body1" gutterBottom={true}>
+                  {this.props.store.details.link_link}
+                </Typography>
+              </Box>
+
+              <Box mb={3}>
+                <Typography component="p" variant="body1" gutterBottom={true}>
+                  {this.props.store.details.video_link}
+                </Typography>
+              </Box>
+
+              <Box mb={3}>
+                <Typography component="p" variant="body1" gutterBottom={true}>
+                  Video Password: {this.props.store.details.password}
+                </Typography>
+              </Box>
+
+              <Box mb={3}>
+                <Typography component="p" variant="body1" gutterBottom={true}>
+                  {this.props.store.details.repo_link}
+                </Typography>
+              </Box>
+
+              <Box mb={3}>
+                <Typography component="p" variant="body1" gutterBottom={true}>
+                  {this.props.store.details.type}
+                </Typography>
+              </Box>
+
+              <Box mb={3}>
+                <Typography component="p" variant="body1" gutterBottom={true}>
+                  {this.props.store.details.tip_hint_trick_text}
+                </Typography>
+              </Box>
+
+              <Button
+                onClick={this.clickEditReference}
+                variant="outlined"
+                color="inherit"
+                size="medium"
+              >
+                Edit
+              </Button>
+              {/* <ReferenceTagEditor referenceId={this.props.match.params.id} /> */}
             </Grid>
           </Grid>
         </Container>

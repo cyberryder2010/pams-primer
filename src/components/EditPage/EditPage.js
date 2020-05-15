@@ -11,8 +11,8 @@ import {
   Box,
 } from "@material-ui/core";
 
-import ReferenceTagEditor from "../ReferenceTagEditor/ReferenceTagEditor";
-import Header from "../Header/Header";
+// import ReferenceTagEditor from "../ReferenceTagEditor/ReferenceTagEditor";
+// import Header from "../Header/Header";
 
 class EditPage extends Component {
   state = {
@@ -39,7 +39,7 @@ class EditPage extends Component {
   };
 
   clickCancel = (event) => {
-    this.props.history.push(`/details/${this.props.match.params.id}`);
+    this.props.history.push(`../details/${this.props.match.params.id}`);
   };
 
   clickSaveReferenceDetails = (event) => {
@@ -62,7 +62,7 @@ class EditPage extends Component {
       payload: newDetails,
     });
     // navigate to the details page
-    this.props.history.push(`/details/${this.props.match.params.id}`);
+    this.props.history.push(`../details/${this.props.match.params.id}`);
   };
 
   render() {
@@ -98,12 +98,83 @@ class EditPage extends Component {
               required
             />
           </Grid>
+          <Grid item xs={12}>
+            <TextField
+              onChange={this.changeReferenceDetails("video_link")}
+              defaultValue={this.props.store.details.video_link}
+              fullWidth
+              variant="outlined"
+              label="Video Link"
+              multiline
+              required
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              onChange={this.changeReferenceDetails("repo_link")}
+              defaultValue={this.props.store.details.repo_link}
+              fullWidth
+              variant="outlined"
+              label="Repo Link"
+              multiline
+              required
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              onChange={this.changeReferenceDetails("link_link")}
+              defaultValue={this.props.store.details.link_link}
+              fullWidth
+              variant="outlined"
+              label="Handy Links"
+              multiline
+              required
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              onChange={this.changeReferenceDetails("note_text")}
+              defaultValue={this.props.store.details.note_text}
+              fullWidth
+              variant="outlined"
+              label="Note Text"
+              multiline
+              required
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              onChange={this.changeReferenceDetails("type")}
+              defaultValue={this.props.store.details.type}
+              fullWidth
+              variant="outlined"
+              label="Tip Hint Trick Type"
+              multiline
+              required
+            />
+          </Grid>
+          <Grid item xs={12}>
+            <TextField
+              onChange={this.changeReferenceDetails("tip_hint_trick_text")}
+              defaultValue={this.props.store.details.tip_hint_trick_text}
+              fullWidth
+              variant="outlined"
+              label="Tip Hint Trick Text"
+              multiline
+              required
+            />
+          </Grid>
         </Grid>
       );
     }
     return (
       <div className="algnLeft">
-        <Header title="Edit" backHandler={this.clickCancel}>
+        {/* <Header title="Edit" backHandler={this.clickCancel}></Header> */}
+
+        <Container maxWidth={false}>
+          <Box mb={4}>{referenceForm}</Box>
+
+          {/* <ReferenceTagEditor referenceId={this.props.match.params.id} /> */}
           <Button
             onClick={this.clickSaveReferenceDetails}
             variant="outlined"
@@ -112,12 +183,14 @@ class EditPage extends Component {
           >
             Save
           </Button>
-        </Header>
-
-        <Container maxWidth={false}>
-          <Box mb={4}>{referenceForm}</Box>
-
-          <ReferenceTagEditor referenceId={this.props.match.params.id} />
+          <Button
+            onClick={this.clickCancel}
+            variant="outlined"
+            color="inherit"
+            size="large"
+          >
+            Cancel
+          </Button>
         </Container>
       </div>
     );
