@@ -30,11 +30,9 @@ router.post("/", (req, res) => {
       newVideo.date,
     ])
     .then((result) => {
-      console.log(`Added video to the database`, newVideo);
       res.sendStatus(201);
     })
     .catch((error) => {
-      console.log(`Error making database query ${sqlText}`, error);
       res.sendStatus(500);
     });
 });

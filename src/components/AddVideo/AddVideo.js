@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+import { Button, TextField, Grid } from "@material-ui/core";
+
 class AddVideo extends Component {
   state = {
-    newVideo: {
-      link: "",
-      password: "",
-      author: "",
-      date: 0,
-    },
+    link: "",
+    password: "",
+    author: "",
+    date: "",
   };
 
   changeNewVideo = (fieldKey) => (event) => {
@@ -20,14 +20,15 @@ class AddVideo extends Component {
   saveNewVideo = (event) => {
     this.props.dispatch({
       type: "POST_VIDEO",
-      payload: {
-        name: this.state.newVideo,
-      },
+      payload: this.state,
     });
 
     // clear form field
     this.setState({
-      newVideo: "",
+      link: "",
+      password: "",
+      author: "",
+      date: "",
     });
   };
 
@@ -35,13 +36,45 @@ class AddVideo extends Component {
     return (
       <div>
         <h3>Add Video</h3>
-        <input
-          placeholder="Video Link"
-          type="text"
-          value={this.state.newVideo}
-          onChange={this.changeNewVideo("link")}
-        />
-        <button onClick={this.saveNewVideo}>Save</button>
+        <Grid container spacing={2}>
+          <Grid item xs={3} md={6}>
+            <TextField
+              placeholder="Link"
+              type="text"
+              value={this.state.link}
+              onChange={this.changeNewVideo("link")}
+              variant="outlined"
+            />
+          </Grid>
+          <Grid item xs={3} md={6}>
+            <TextField
+              placeholder="Password"
+              type="text"
+              value={this.state.password}
+              onChange={this.changeNewVideo("password")}
+              variant="outlined"
+            />
+          </Grid>
+          <Grid item xs={3} md={6}>
+            <TextField
+              placeholder="Author"
+              type="text"
+              value={this.state.author}
+              onChange={this.changeNewVideo("author")}
+              variant="outlined"
+            />
+          </Grid>
+          <Grid item xs={3} md={6}>
+            <TextField
+              placeholder="Date"
+              type="text"
+              value={this.state.date}
+              onChange={this.changeNewVideo("date")}
+              variant="outlined"
+            />
+          </Grid>
+        </Grid>
+        <Button onClick={this.saveNewVideo}>Save Video</Button>
       </div>
     );
   }

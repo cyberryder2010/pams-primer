@@ -20,7 +20,7 @@ class DetailsPage extends Component {
   componentDidMount() {
     // dispatch to saga to call server API
     this.props.dispatch({
-      type: "GET_REFERENCE",
+      type: "GET_REFERENCE_DETAILS",
       payload: this.props.match.params.id,
     });
   }

@@ -3,15 +3,15 @@ import { put, takeLatest } from "redux-saga/effects";
 
 function* postVideo(action) {
   try {
-    yield axios.post(`/api/video/`, action.payload);
+    yield axios.post(`/api/video`, action.payload);
     yield put({
-      type: "GET_VIDEO",
+      type: "GET_VIDEO_DETAILS",
     });
   } catch (err) {
     console.warn(err);
   }
 }
-function* videoSaga() {
-  yield takeLatest("GET_VIDEO", postVideo);
+function* postVideoSaga() {
+  yield takeLatest("POST_VIDEO", postVideo);
 }
-export default videoSaga;
+export default postVideoSaga;

@@ -16,7 +16,14 @@ class AddPage extends Component {
   render() {
     return (
       <div className="algnLeft">
-        <AddVideo />
+        {/* Add Reference Component */}
+        {this.props.store.newReference.id != null ? (
+          <>
+            <AddVideo />
+          </>
+        ) : (
+          <p>Please Add Reference first</p>
+        )}
         <Container maxWidth={false}>
           <Button
             onClick={this.clickCancel}

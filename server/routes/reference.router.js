@@ -52,11 +52,11 @@ router.post("/", (req, res) => {
   //save reference
   const newReference = req.body;
   const sqlText = `INSERT INTO "reference" (title, description) VALUES 
-  ($1, $2)`;
+  ($1, $2) RETURNING id;`;
   pool
     .query(sqlText, [newReference.title, newReference.description])
     .then((result) => {
-      res.sendStatus(201);
+      res.send(result.rows[0]);
     })
     .catch((error) => {
       res.sendStatus(500);
