@@ -34,10 +34,10 @@ class LinkPage extends Component {
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
             <TableRow>
-              <TableCell>Links</TableCell>
-              <TableCell align="left">Link</TableCell>
+              <TableCell>Documents</TableCell>
               <TableCell align="left">Title</TableCell>
               <TableCell align="left">Description</TableCell>
+              <TableCell align="left">Link</TableCell>
               {/* <TableCell align="left">Author</TableCell>
               <TableCell align="left">Repo</TableCell> */}
             </TableRow>
@@ -48,9 +48,9 @@ class LinkPage extends Component {
                 <TableCell component="th" scope="item">
                   {item.name}
                 </TableCell>
-                <TableCell align="left">{item.date}</TableCell>
                 <TableCell align="left">{item.title}</TableCell>
                 <TableCell align="left">{item.description}</TableCell>
+                <TableCell align="left">{item.link}</TableCell>
                 {/* <TableCell align="left">{item.author}</TableCell>
                 <TableCell align="left">{item.link}</TableCell> */}
               </TableRow>
@@ -62,4 +62,4 @@ class LinkPage extends Component {
   }
 }
 
-export default withStyles(useStyles)(connect(mapStoreToProps)(RepoPage));
+export default withStyles(useStyles)(connect(mapStoreToProps)(LinkPage));

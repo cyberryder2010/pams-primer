@@ -35,8 +35,8 @@ class GlossaryPage extends Component {
           <TableHead>
             <TableRow>
               <TableCell>Glossary</TableCell>
-              <TableCell align="right">Term</TableCell>
-              <TableCell align="right">Definition</TableCell>
+              <TableCell align="left">Term</TableCell>
+              <TableCell align="left">Definition</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -45,8 +45,8 @@ class GlossaryPage extends Component {
                 <TableCell component="th" scope="item">
                   {item.name}
                 </TableCell>
-                <TableCell align="right">{item.term}</TableCell>
-                <TableCell align="right">{item.definition}</TableCell>
+                <TableCell align="left">{item.term}</TableCell>
+                <TableCell align="left">{item.definition}</TableCell>
               </TableRow>
             ))}
           </TableBody>

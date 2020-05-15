@@ -34,6 +34,7 @@ import ImagePage from "../ImagePage/ImagePage";
 import VideoPage from "../VideoPage/VideoPage";
 import RepoPage from "../RepoPage/RepoPage";
 import TipHintTrickPage from "../TipHintTrickPage/TipHintTrickPage";
+import LinkPage from "../LinkPage/LinkPage";
 import "./App.css";
 
 class App extends Component {
@@ -97,6 +98,7 @@ class App extends Component {
                 path="/tip_hint_trick"
                 component={TipHintTrickPage}
               />
+              <Route exact path="/link" component={LinkPage} />
               {/* If none of the other routes matched, we will show a 404. */}
               <Route render={() => <h1>404</h1>} />
             </Switch>

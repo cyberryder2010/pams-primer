@@ -54,7 +54,7 @@ class Nav2 extends Component {
         <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
             <Typography variant="h6" noWrap>
-              Tech Primer
+              Pam's Tech Primer
             </Typography>
           </Toolbar>
         </AppBar>
@@ -95,7 +95,6 @@ class Nav2 extends Component {
               { text: "Videos", url: "/video" },
               { text: "Repos", url: "/repo" },
               { text: "Notes", url: "/note" },
-              { text: "Images", url: "/image" },
             ].map((text, index) => (
               <Link to={text.url} key={text.text}>
                 <ListItem button>
@@ -114,7 +113,7 @@ class Nav2 extends Component {
           <Divider />
           <List>
             {[
-              { text: "Handy Links", url: "/link" },
+              { text: "Handy Documents", url: "/link" },
               { text: "Tech Speak", url: "/glossary" },
               { text: "Tips, Hints, Tricks", url: "/tip_hint_trick" },
             ].map((text, index) => (
@@ -139,3 +138,5 @@ class Nav2 extends Component {
 }
 
 export default withStyles(useStyles)(connect(mapStoreToProps)(Nav2));
+
+// STRETCH -- { text: "Images", url: "/image" }

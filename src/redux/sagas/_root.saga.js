@@ -9,6 +9,7 @@ import postTagSaga from "./postTag.saga";
 import getTagSaga from "./getTag.saga";
 import getReferenceTagSaga from "./getReferenceTag.saga";
 import getVideoDetailsSaga from "./getVideoDetails.saga";
+import postReferenceSaga from "./postReference.saga";
 import postReferenceTagSaga from "./postReferenceTag.saga";
 import putReferenceDetailsSaga from "./putReferenceDetails.saga";
 import glossarySaga from "./glossary.saga";
@@ -18,6 +19,7 @@ import repoSaga from "./repo.saga";
 import tipHintTrick from "./tht.saga";
 import imageSaga from "./image.saga";
 import postVideoSaga from "./postVideo.saga";
+import getAllLinksSaga from "./link.saga";
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -37,6 +39,8 @@ export default function* rootSaga() {
     repoSaga(),
     tipHintTrick(),
     imageSaga(),
+    getAllLinksSaga(),
+    postReferenceSaga(),
     getReferenceTagSaga(),
     postReferenceTagSaga(),
     getReferenceDetailsSaga(),

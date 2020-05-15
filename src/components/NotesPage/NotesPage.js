@@ -35,9 +35,9 @@ class NotesPage extends Component {
           <TableHead>
             <TableRow>
               <TableCell>Notes</TableCell>
-              <TableCell align="right">Title</TableCell>
-              <TableCell align="right">Date</TableCell>
-              <TableCell align="right">Note</TableCell>
+              <TableCell align="left">Title</TableCell>
+              <TableCell align="left">Date</TableCell>
+              <TableCell align="left">Note</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -46,9 +46,9 @@ class NotesPage extends Component {
                 <TableCell component="th" scope="item">
                   {item.name}
                 </TableCell>
-                <TableCell align="right">{item.title}</TableCell>
-                <TableCell align="right">{item.date}</TableCell>
-                <TableCell align="right">{item.text}</TableCell>
+                <TableCell align="left">{item.title}</TableCell>
+                <TableCell align="left">{item.date}</TableCell>
+                <TableCell align="left">{item.text}</TableCell>
               </TableRow>
             ))}
           </TableBody>

@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   // get all link reference data
-  const queryText = `SELECT * FROM "link" LEFT JOIN "reference" ON "link"."reference_id" = "reference"."id" ORDER BY "reference"."title" ASC;`;
+  const queryText = `SELECT * FROM "reference" JOIN "link" ON "reference"."link_id" = "link"."id" ORDER BY "reference"."title" ASC;`;
 
   pool
     .query(queryText)

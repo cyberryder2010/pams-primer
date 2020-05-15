@@ -10,13 +10,15 @@ import {
   //   LinearProgress,
   //   Box,
 } from "@material-ui/core";
+
+import AddReference from "../AddReference/AddReference";
 import AddVideo from "../AddVideo/AddVideo";
 
 class AddPage extends Component {
   render() {
     return (
       <div className="algnLeft">
-        {/* Add Reference Component */}
+        <AddReference />
         {this.props.store.newReference.id != null ? (
           <>
             <AddVideo />
