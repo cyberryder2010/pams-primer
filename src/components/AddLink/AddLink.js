@@ -3,29 +3,27 @@ import { connect } from "react-redux";
 
 import { Button, TextField, Grid } from "@material-ui/core";
 
-class AddRepo extends Component {
+class AddLink extends Component {
   state = {
     link: "",
-    author: "",
     date: "",
   };
 
-  changeNewRepo = (fieldKey) => (event) => {
+  changeNewLink = (fieldKey) => (event) => {
     this.setState({
       [fieldKey]: event.target.value,
     });
   };
 
-  saveNewRepo = (event) => {
+  saveNewLink = (event) => {
     this.props.dispatch({
-      type: "POST_REPO",
+      type: "POST_LINK",
       payload: this.state,
     });
 
     // clear form field
     this.setState({
       link: "",
-      author: "",
       date: "",
     });
   };
@@ -33,23 +31,14 @@ class AddRepo extends Component {
   render() {
     return (
       <div>
-        <h3>Add Github Repo</h3>
+        <h3>Add Handy Document</h3>
         <Grid container spacing={2}>
           <Grid item xs={6} md={6}>
             <TextField
-              placeholder="Repo"
+              placeholder="URL"
               type="text"
               value={this.state.link}
-              onChange={this.changeNewRepo("link")}
-              variant="outlined"
-            />
-          </Grid>
-          <Grid item xs={6} md={6}>
-            <TextField
-              placeholder="Author"
-              type="text"
-              value={this.state.author}
-              onChange={this.changeNewRepo("author")}
+              onChange={this.changeNewLink("link")}
               variant="outlined"
             />
           </Grid>
@@ -58,12 +47,12 @@ class AddRepo extends Component {
               placeholder="Date"
               type="text"
               value={this.state.date}
-              onChange={this.changeNewRepo("date")}
+              onChange={this.changeNewLink("date")}
               variant="outlined"
             />
           </Grid>
         </Grid>
-        <Button onClick={this.saveNewRepo}>Save Github Repo</Button>
+        <Button onClick={this.saveNewLink}>Save Handy Document</Button>
       </div>
     );
   }
@@ -71,4 +60,4 @@ class AddRepo extends Component {
 
 const mapStoreToProps = (store) => ({ store });
 
-export default connect(mapStoreToProps)(AddRepo);
+export default connect(mapStoreToProps)(AddLink);

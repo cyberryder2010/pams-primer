@@ -21,6 +21,7 @@ import imageSaga from "./image.saga";
 import postVideoSaga from "./postVideo.saga";
 import getAllLinksSaga from "./link.saga";
 import postRepoSaga from "./postRepo.saga";
+import postLinkSaga from "./postLink.saga";
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -52,5 +53,6 @@ export default function* rootSaga() {
     postVideoSaga(),
     getVideoDetailsSaga(),
     postRepoSaga(),
+    postLinkSaga(),
   ]);
 }
