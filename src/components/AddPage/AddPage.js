@@ -13,6 +13,7 @@ import {
 
 import AddReference from "../AddReference/AddReference";
 import AddVideo from "../AddVideo/AddVideo";
+import AddRepo from "../AddRepo/AddRepo";
 
 class AddPage extends Component {
   render() {
@@ -22,6 +23,7 @@ class AddPage extends Component {
         {this.props.store.newReference.id != null ? (
           <>
             <AddVideo />
+            <AddRepo />
           </>
         ) : (
           <p>Please Add Reference first</p>

@@ -22,7 +22,7 @@ class VideoPage extends Component {
   componentDidMount() {
     // load up all information from the server
     this.props.dispatch({
-      type: "GET_ALL_VIDEOS",
+      type: "GET_VIDEO_DETAILS",
     });
   }
 

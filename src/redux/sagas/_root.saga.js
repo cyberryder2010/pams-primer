@@ -20,6 +20,7 @@ import tipHintTrick from "./tht.saga";
 import imageSaga from "./image.saga";
 import postVideoSaga from "./postVideo.saga";
 import getAllLinksSaga from "./link.saga";
+import postRepoSaga from "./postRepo.saga";
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -50,5 +51,6 @@ export default function* rootSaga() {
     postTagSaga(),
     postVideoSaga(),
     getVideoDetailsSaga(),
+    postRepoSaga(),
   ]);
 }

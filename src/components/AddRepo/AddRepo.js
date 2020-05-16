@@ -3,30 +3,28 @@ import { connect } from "react-redux";
 
 import { Button, TextField, Grid } from "@material-ui/core";
 
-class AddVideo extends Component {
+class AddRepo extends Component {
   state = {
     link: "",
-    password: "",
     author: "",
     date: "",
   };
 
-  changeNewVideo = (fieldKey) => (event) => {
+  changeNewRepo = (fieldKey) => (event) => {
     this.setState({
       [fieldKey]: event.target.value,
     });
   };
 
-  saveNewVideo = (event) => {
+  saveNewRepo = (event) => {
     this.props.dispatch({
-      type: "POST_VIDEO",
+      type: "POST_REPO",
       payload: this.state,
     });
 
     // clear form field
     this.setState({
       link: "",
-      password: "",
       author: "",
       date: "",
     });
@@ -35,23 +33,14 @@ class AddVideo extends Component {
   render() {
     return (
       <div>
-        <h3>Add Video</h3>
+        <h3>Add Github Repo</h3>
         <Grid container spacing={2}>
           <Grid item xs={6} md={6}>
             <TextField
-              placeholder="Link"
+              placeholder="link"
               type="text"
               value={this.state.link}
-              onChange={this.changeNewVideo("link")}
-              variant="outlined"
-            />
-          </Grid>
-          <Grid item xs={6} md={6}>
-            <TextField
-              placeholder="Password"
-              type="text"
-              value={this.state.password}
-              onChange={this.changeNewVideo("password")}
+              onChange={this.changeNewRepo("link")}
               variant="outlined"
             />
           </Grid>
@@ -60,7 +49,7 @@ class AddVideo extends Component {
               placeholder="Author"
               type="text"
               value={this.state.author}
-              onChange={this.changeNewVideo("author")}
+              onChange={this.changeNewRepo("author")}
               variant="outlined"
             />
           </Grid>
@@ -69,12 +58,12 @@ class AddVideo extends Component {
               placeholder="Date"
               type="text"
               value={this.state.date}
-              onChange={this.changeNewVideo("date")}
+              onChange={this.changeNewRepo("date")}
               variant="outlined"
             />
           </Grid>
         </Grid>
-        <Button onClick={this.saveNewVideo}>Save Video</Button>
+        <Button onClick={this.saveNewRepo}>Save Reference</Button>
       </div>
     );
   }
@@ -82,4 +71,4 @@ class AddVideo extends Component {
 
 const mapStoreToProps = (store) => ({ store });
 
-export default connect(mapStoreToProps)(AddVideo);
+export default connect(mapStoreToProps)(AddRepo);

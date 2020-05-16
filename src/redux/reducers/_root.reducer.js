@@ -14,6 +14,8 @@ import tipHintTrick from "./tht.reducer";
 import image from "./image.reducer";
 import link from "./link.reducer";
 import newReference from "./newReference.reducer";
+import newRepo from "./newRepo.reducer";
+import newLink from "./newLink.reducer";
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -37,6 +39,8 @@ const rootReducer = combineReducers({
   image, //all pics
   link, //all links to handy documents
   newReference, //add a reference
+  newRepo, // add a repo link
+  newLink, // add a handy document link or url
 });
 
 export default rootReducer;

@@ -23,10 +23,8 @@ class AddReference extends Component {
 
     // clear form field
     this.setState({
-      link: "",
-      password: "",
-      author: "",
-      date: "",
+      title: "",
+      description: "",
     });
   };
 
@@ -44,7 +42,7 @@ class AddReference extends Component {
               variant="outlined"
             />
           </Grid>
-          <Grid item xs={3} md={6}>
+          <Grid item xs={9} md={6}>
             <TextField
               placeholder="Description"
               type="text"
