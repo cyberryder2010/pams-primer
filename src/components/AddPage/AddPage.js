@@ -15,6 +15,7 @@ import AddReference from "../AddReference/AddReference";
 import AddVideo from "../AddVideo/AddVideo";
 import AddRepo from "../AddRepo/AddRepo";
 import AddLink from "../AddLink/AddLink";
+import AddNote from "../AddNote/AddNote";
 
 class AddPage extends Component {
   render() {
@@ -26,6 +27,7 @@ class AddPage extends Component {
             <AddVideo />
             <AddRepo />
             <AddLink />
+            <AddNote />
           </>
         ) : (
           <p>Please Add Reference first</p>

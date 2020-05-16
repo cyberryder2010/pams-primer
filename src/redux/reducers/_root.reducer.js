@@ -16,6 +16,7 @@ import link from "./link.reducer";
 import newReference from "./newReference.reducer";
 import newRepo from "./newRepo.reducer";
 import newLink from "./newLink.reducer";
+import newNote from "./newNote.reducer";
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -41,6 +42,7 @@ const rootReducer = combineReducers({
   newReference, //add a reference
   newRepo, // add a repo link
   newLink, // add a handy document link or url
+  newNote, // add a note
 });
 
 export default rootReducer;

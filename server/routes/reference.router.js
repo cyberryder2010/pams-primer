@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 
 router.get("/details/:id", (req, res) => {
   // get all reference data
-  const queryText = `SELECT "reference".title, "reference".description, "video".link as "video_link", "video".date as "video_date", "video".author as "video_author", "video".password, "repo".link as "repo_link", "repo".date as "repo_date", "repo".author as "repo_author", "link".link as "link_link", "note".title as "note_title", "note".text as "note_text", "tip_hint_trick".type, "tip_hint_trick".text as "tip_hint_trick_text" FROM "reference"
+  const queryText = `SELECT "reference".title, "reference".description, "video".link as "video_link", "video".date as "video_date", "video".author as "video_author", "video".password, "repo".link as "repo_link", "repo".date as "repo_date", "repo".author as "repo_author", "link".link as "link_link", "note".title as "note_title", "note".text as "note_text", "note".date "note_date", "tip_hint_trick".type, "tip_hint_trick".text as "tip_hint_trick_text" FROM "reference"
     LEFT JOIN "tag_reference" ON "reference".id = "tag_reference".reference_id
     LEFT JOIN "tag" ON "tag_reference".tag_id = "tag".id
     LEFT JOIN "video" ON "reference"."video_id" = "video"."id" 
