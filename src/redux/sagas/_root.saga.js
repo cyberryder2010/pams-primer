@@ -23,7 +23,7 @@ import getAllLinksSaga from "./link.saga";
 import postRepoSaga from "./postRepo.saga";
 import postLinkSaga from "./postLink.saga";
 import postNoteSaga from "./postNote.saga";
-
+import postTHTSaga from "./postTHT.saga";
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -56,5 +56,6 @@ export default function* rootSaga() {
     postRepoSaga(),
     postLinkSaga(),
     postNoteSaga(),
+    postTHTSaga(),
   ]);
 }

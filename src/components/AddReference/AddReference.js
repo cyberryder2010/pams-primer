@@ -52,7 +52,13 @@ class AddReference extends Component {
             />
           </Grid>
         </Grid>
-        <Button onClick={this.saveNewReference}>Save Reference</Button>
+        <Button
+          onClick={this.saveNewReference}
+          variant="contained"
+          color="secondary"
+        >
+          Save Reference
+        </Button>
       </div>
     );
   }

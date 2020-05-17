@@ -63,7 +63,13 @@ class AddRepo extends Component {
             />
           </Grid>
         </Grid>
-        <Button onClick={this.saveNewRepo}>Save Github Repo</Button>
+        <Button
+          onClick={this.saveNewRepo}
+          variant="contained"
+          color="secondary"
+        >
+          Save Github Repo
+        </Button>
       </div>
     );
   }

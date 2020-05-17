@@ -16,6 +16,7 @@ import AddVideo from "../AddVideo/AddVideo";
 import AddRepo from "../AddRepo/AddRepo";
 import AddLink from "../AddLink/AddLink";
 import AddNote from "../AddNote/AddNote";
+import AddTHT from "../AddTHT/AddTHT";
 
 class AddPage extends Component {
   render() {
@@ -28,6 +29,7 @@ class AddPage extends Component {
             <AddRepo />
             <AddLink />
             <AddNote />
+            <AddTHT />
           </>
         ) : (
           <p>Please Add Reference first</p>
@@ -36,7 +38,7 @@ class AddPage extends Component {
           <Button
             onClick={this.clickCancel}
             variant="outlined"
-            color="inherit"
+            color="primary"
             size="large"
           >
             Cancel

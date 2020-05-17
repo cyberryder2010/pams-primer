@@ -25,6 +25,16 @@ class DetailsPage extends Component {
     });
   }
 
+  clickDeleteReference = (event) => {
+    // dispatch to a saga for deleting genre from database
+    this.props.dispatch({
+      type: "DELETE_REFERENCE",
+      payload: {
+        referenceId: this.props.item.id,
+      },
+    });
+  };
+
   clickBackToList = (event) => {
     this.props.history.push("/");
   };
@@ -94,10 +104,18 @@ class DetailsPage extends Component {
               <Button
                 onClick={this.clickEditReference}
                 variant="outlined"
-                color="inherit"
+                color="primary"
                 size="medium"
               >
                 Edit
+              </Button>
+              <Button
+                onClick={this.clickDeleteReference}
+                variant="outlined"
+                color="secondary"
+                size="medium"
+              >
+                Delete
               </Button>
               {/* <ReferenceTagEditor referenceId={this.props.match.params.id} /> */}
             </Grid>

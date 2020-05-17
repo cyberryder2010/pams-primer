@@ -52,7 +52,13 @@ class AddLink extends Component {
             />
           </Grid>
         </Grid>
-        <Button onClick={this.saveNewLink}>Save Handy Document</Button>
+        <Button
+          onClick={this.saveNewLink}
+          variant="contained"
+          color="secondary"
+        >
+          Save Handy Document
+        </Button>
       </div>
     );
   }

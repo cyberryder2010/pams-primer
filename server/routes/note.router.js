@@ -23,13 +23,11 @@ router.post("/", (req, res) => {
   const sqlText = `INSERT INTO "note" (title, date, text) VALUES 
   ($1, $2, $3)`;
   pool
-    .query(sqlText, [newNote.title, newNote.text, newNote.date])
+    .query(sqlText, [newNote.title, newNote.date, newNote.text])
     .then((result) => {
-      console.log(`Added Note to the database`, newNote);
       res.sendStatus(201);
     })
     .catch((error) => {
-      console.log(`Error making database query ${sqlText}`, error);
       res.sendStatus(500);
     });
 });

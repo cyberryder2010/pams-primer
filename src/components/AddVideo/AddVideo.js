@@ -74,7 +74,13 @@ class AddVideo extends Component {
             />
           </Grid>
         </Grid>
-        <Button onClick={this.saveNewVideo}>Save Video</Button>
+        <Button
+          onClick={this.saveNewVideo}
+          variant="contained"
+          color="secondary"
+        >
+          Save Video
+        </Button>
       </div>
     );
   }

@@ -178,7 +178,7 @@ class EditPage extends Component {
           <Button
             onClick={this.clickSaveReferenceDetails}
             variant="outlined"
-            color="inherit"
+            color="secondary"
             size="large"
           >
             Save
@@ -186,7 +186,7 @@ class EditPage extends Component {
           <Button
             onClick={this.clickCancel}
             variant="outlined"
-            color="inherit"
+            color="primary"
             size="large"
           >
             Cancel

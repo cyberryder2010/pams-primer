@@ -3,29 +3,27 @@ import { connect } from "react-redux";
 
 import { Button, TextField, Grid } from "@material-ui/core";
 
-class AddNote extends Component {
+class AddTHT extends Component {
   state = {
-    title: "",
-    date: "",
+    type: "",
     text: "",
   };
 
-  changeNewNote = (fieldKey) => (event) => {
+  changeNewTHT = (fieldKey) => (event) => {
     this.setState({
       [fieldKey]: event.target.value,
     });
   };
 
-  saveNewNote = (event) => {
+  saveNewTHT = (event) => {
     this.props.dispatch({
-      type: "POST_NOTE",
+      type: "POST_THT",
       payload: this.state,
     });
 
     // clear form field
     this.setState({
-      title: "",
-      date: "",
+      type: "",
       text: "",
     });
   };
@@ -33,42 +31,29 @@ class AddNote extends Component {
   render() {
     return (
       <div>
-        <h3>Add Note</h3>
+        <h3>Add Tip, Hint, Trick</h3>
         <Grid container spacing={2}>
           <Grid item xs={6} md={6}>
             <TextField
-              placeholder="Date"
+              placeholder="Type"
               type="text"
-              value={this.state.date}
-              onChange={this.changeNewNote("date")}
+              value={this.state.type}
+              onChange={this.changeNewTHT("type")}
               variant="outlined"
             />
           </Grid>
           <Grid item xs={6} md={6}>
             <TextField
-              placeholder="Title"
-              type="text"
-              value={this.state.title}
-              onChange={this.changeNewNote("title")}
-              variant="outlined"
-            />
-          </Grid>
-          <Grid item xs={6} md={6}>
-            <TextField
-              placeholder="Note Text"
+              placeholder="Text"
               type="text"
               value={this.state.text}
-              onChange={this.changeNewNote("text")}
+              onChange={this.changeNewTHT("text")}
               variant="outlined"
             />
           </Grid>
         </Grid>
-        <Button
-          onClick={this.saveNewNote}
-          variant="contained"
-          color="secondary"
-        >
-          Save Note
+        <Button onClick={this.saveNewTHT} variant="contained" color="secondary">
+          Save Tip, Hint or Trick
         </Button>
       </div>
     );
@@ -77,4 +62,4 @@ class AddNote extends Component {
 
 const mapStoreToProps = (store) => ({ store });
 
-export default connect(mapStoreToProps)(AddNote);
+export default connect(mapStoreToProps)(AddTHT);
