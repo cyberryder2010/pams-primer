@@ -39,6 +39,7 @@ class AddTHT extends Component {
               type="text"
               value={this.state.type}
               onChange={this.changeNewTHT("type")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>
@@ -48,6 +49,7 @@ class AddTHT extends Component {
               type="text"
               value={this.state.text}
               onChange={this.changeNewTHT("text")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>

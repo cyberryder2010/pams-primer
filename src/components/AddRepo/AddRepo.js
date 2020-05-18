@@ -41,6 +41,7 @@ class AddRepo extends Component {
               type="text"
               value={this.state.link}
               onChange={this.changeNewRepo("link")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>
@@ -50,6 +51,7 @@ class AddRepo extends Component {
               type="text"
               value={this.state.author}
               onChange={this.changeNewRepo("author")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>
@@ -59,6 +61,7 @@ class AddRepo extends Component {
               type="text"
               value={this.state.date}
               onChange={this.changeNewRepo("date")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>

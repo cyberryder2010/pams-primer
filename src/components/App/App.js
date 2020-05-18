@@ -79,26 +79,34 @@ class App extends Component {
                 component={RegisterPage}
               />
               {/* page routes for specific app pages in use. */}
-              <Route exact path="/home" component={HomePage} />
-              <Route exact path="/reference" component={ReferenceList} />
-              <Route exact path="/reference/edit/:id" component={EditPage} />
-              <Route
+              <ProtectedRoute exact path="/home" component={HomePage} />
+              <ProtectedRoute
+                exact
+                path="/reference"
+                component={ReferenceList}
+              />
+              <ProtectedRoute
+                exact
+                path="/reference/edit/:id"
+                component={EditPage}
+              />
+              <ProtectedRoute
                 exact
                 path="/reference/details/:id"
                 component={DetailsPage}
               />
-              <Route exact path="/add" component={AddPage} />
-              <Route exact path="/video" component={VideoPage} />
-              <Route exact path="/repo" component={RepoPage} />
-              <Route exact path="/note" component={NotesPage} />
-              <Route exact path="/image" component={ImagePage} />
-              <Route exact path="/glossary" component={GlossaryPage} />
-              <Route
+              <ProtectedRoute exact path="/add" component={AddPage} />
+              <ProtectedRoute exact path="/video" component={VideoPage} />
+              <ProtectedRoute exact path="/repo" component={RepoPage} />
+              <ProtectedRoute exact path="/note" component={NotesPage} />
+              <ProtectedRoute exact path="/image" component={ImagePage} />
+              <ProtectedRoute exact path="/glossary" component={GlossaryPage} />
+              <ProtectedRoute
                 exact
                 path="/tip_hint_trick"
                 component={TipHintTrickPage}
               />
-              <Route exact path="/link" component={LinkPage} />
+              <ProtectedRoute exact path="/link" component={LinkPage} />
               {/* If none of the other routes matched, we will show a 404. */}
               <Route render={() => <h1>404</h1>} />
             </Switch>

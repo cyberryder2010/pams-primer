@@ -41,6 +41,7 @@ class AddNote extends Component {
               type="text"
               value={this.state.date}
               onChange={this.changeNewNote("date")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>
@@ -50,6 +51,7 @@ class AddNote extends Component {
               type="text"
               value={this.state.title}
               onChange={this.changeNewNote("title")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>
@@ -59,6 +61,7 @@ class AddNote extends Component {
               type="text"
               value={this.state.text}
               onChange={this.changeNewNote("text")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>

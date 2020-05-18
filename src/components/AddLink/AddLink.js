@@ -39,6 +39,7 @@ class AddLink extends Component {
               type="text"
               value={this.state.link}
               onChange={this.changeNewLink("link")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>
@@ -48,6 +49,7 @@ class AddLink extends Component {
               type="text"
               value={this.state.date}
               onChange={this.changeNewLink("date")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>
