@@ -26,13 +26,14 @@ class DetailsPage extends Component {
   }
 
   clickDeleteReference = (event) => {
-    // dispatch to a saga for deleting genre from database
+    // dispatch to a saga for deleting reference from database
     this.props.dispatch({
       type: "DELETE_REFERENCE",
       payload: {
-        referenceId: this.props.item.id,
+        referenceId: this.props.match.params.id,
       },
     });
+    this.props.history.push("/");
   };
 
   clickBackToList = (event) => {

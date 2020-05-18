@@ -12,6 +12,7 @@ import getVideoDetailsSaga from "./getVideoDetails.saga";
 import postReferenceSaga from "./postReference.saga";
 import postReferenceTagSaga from "./postReferenceTag.saga";
 import putReferenceDetailsSaga from "./putReferenceDetails.saga";
+import deleteReferenceSaga from "./deleteReference.saga";
 import glossarySaga from "./glossary.saga";
 import noteSaga from "./note.saga";
 import videoSaga from "./video.saga";
@@ -49,6 +50,7 @@ export default function* rootSaga() {
     getReferenceDetailsSaga(),
     putReferenceDetailsSaga(),
     getAllReferenceSaga(),
+    deleteReferenceSaga(),
     getTagSaga(),
     postTagSaga(),
     postVideoSaga(),

@@ -26,6 +26,10 @@ class RepoPage extends Component {
     });
   }
 
+  clickRepoDetails = (event, id) => {
+    this.props.history.push(`reference/details/${id}`);
+  };
+
   render() {
     const { classes } = this.props;
 
@@ -44,7 +48,10 @@ class RepoPage extends Component {
           </TableHead>
           <TableBody>
             {this.props.store.repo.map((item, index) => (
-              <TableRow key={index}>
+              <TableRow
+                onClick={(event) => this.clickRepoDetails(event, item.id)}
+                key={index}
+              >
                 <TableCell component="th" scope="item">
                   {item.name}
                 </TableCell>

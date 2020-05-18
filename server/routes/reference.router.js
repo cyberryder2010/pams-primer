@@ -88,7 +88,7 @@ router.put("/edit/:id", (req, res) => {
     });
 });
 
-router.delete("/:id", (req, res) => {
+router.delete("/details/:id", (req, res) => {
   const referenceId = req.params.id;
   const queryString = `DELETE FROM "reference" WHERE "id" = $1;`;
 

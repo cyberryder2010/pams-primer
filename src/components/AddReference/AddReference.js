@@ -39,6 +39,7 @@ class AddReference extends Component {
               type="text"
               value={this.state.title}
               onChange={this.changeNewReference("title")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>
@@ -46,6 +47,7 @@ class AddReference extends Component {
             <TextField
               placeholder="Description"
               type="text"
+              fullWidth={true}
               value={this.state.description}
               onChange={this.changeNewReference("description")}
               variant="outlined"

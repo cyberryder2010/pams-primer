@@ -26,6 +26,10 @@ class NotesPage extends Component {
     });
   }
 
+  clickNoteDetails = (event, id) => {
+    this.props.history.push(`reference/details/${id}`);
+  };
+
   render() {
     const { classes } = this.props;
 
@@ -42,7 +46,10 @@ class NotesPage extends Component {
           </TableHead>
           <TableBody>
             {this.props.store.note.map((item, index) => (
-              <TableRow key={index}>
+              <TableRow
+                onClick={(event) => this.clickNoteDetails(event, item.id)}
+                key={index}
+              >
                 <TableCell component="th" scope="item">
                   {item.name}
                 </TableCell>

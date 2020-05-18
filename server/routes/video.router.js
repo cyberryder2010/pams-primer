@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   // get all video Video data
-  const queryText = `SELECT * FROM "reference" JOIN "video" ON "reference"."video_id" = "video"."id" ORDER BY "reference"."title" ASC;`;
+  const queryText = `SELECT reference.id, * FROM "reference" JOIN "video" ON "reference"."video_id" = "video"."id" ORDER BY "reference"."title" ASC;`;
 
   pool
     .query(queryText)
