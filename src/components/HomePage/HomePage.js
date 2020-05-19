@@ -9,9 +9,9 @@ class HomePage extends Component {
   render() {
     return (
       <div>
-        <ReferenceList />
-
         <ReferenceSearchField />
+
+        <ReferenceList />
       </div>
     );
   }
