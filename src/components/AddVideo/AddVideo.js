@@ -43,6 +43,7 @@ class AddVideo extends Component {
               type="text"
               value={this.state.link}
               onChange={this.changeNewVideo("link")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>
@@ -52,6 +53,7 @@ class AddVideo extends Component {
               type="text"
               value={this.state.password}
               onChange={this.changeNewVideo("password")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>
@@ -61,6 +63,7 @@ class AddVideo extends Component {
               type="text"
               value={this.state.author}
               onChange={this.changeNewVideo("author")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>
@@ -70,6 +73,7 @@ class AddVideo extends Component {
               type="text"
               value={this.state.date}
               onChange={this.changeNewVideo("date")}
+              fullWidth={true}
               variant="outlined"
             />
           </Grid>

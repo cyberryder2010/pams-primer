@@ -71,8 +71,8 @@ class Nav2 extends Component {
           <Divider />
           <List>
             {[
-              { text: "Home", url: "/home" },
               { text: "Login", url: "/login" },
+              { text: "Home", url: "/home" },
               { text: "Add", url: "/add" },
             ].map((text, index) => (
               <Link to={text.url} key={text.text}>

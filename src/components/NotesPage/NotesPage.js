@@ -53,7 +53,7 @@ class NotesPage extends Component {
                 <TableCell component="th" scope="item">
                   {item.name}
                 </TableCell>
-                <TableCell align="left">{item.title}</TableCell>
+                <TableCell align="left">{item.note_title}</TableCell>
                 <TableCell align="left">{item.date}</TableCell>
                 <TableCell align="left">{item.text}</TableCell>
               </TableRow>
